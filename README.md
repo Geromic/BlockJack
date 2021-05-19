@@ -12,7 +12,7 @@ Just in case you live under a rock, I am gonna breifly explain the rules of blac
 
 To start it off, the user will need to make a startGame transaction to our contract with a chosen amount of ether - this will be the initial bet. Once the transaction is complete the user has two choices - hit or stand. Both of these calls will not require any ether to be spent, meaning they are non payable.
 
-Depending on the outcome of the game, at the end there will be one last transaction. The contract will transfer to the user's account double the initial bet in the case of a win and just the initial bet if it ends up in a draw. On the other hand, if the player looses, none of the ether will be returned and the house will keep it for further bets.
+Depending on the outcome of the game, at the end there will be one last transaction. The contract will transfer to the user's account double the initial bet in the case of a win and just the initial bet if it ends up in a draw. On the other hand, if the player loses, none of the ether will be returned and the house will keep it for further bets.
 
 <br>
 
