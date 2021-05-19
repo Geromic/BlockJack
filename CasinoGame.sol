@@ -12,11 +12,13 @@ contract CasinoGame is Ownable{
         _owner.transfer(address(this).balance);
     }
     
+    /// @notice Used for depositing money
     function deposit() external payable onlyOwner{
         // i mean, we only need to deposit a certain amount
         // nothing to do here
     }
     
+    /// @notice Used for checking contract account balance
     function checkBalance() external payable onlyOwner returns (uint){
         return address(this).balance;
     }

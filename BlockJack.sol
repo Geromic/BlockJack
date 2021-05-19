@@ -27,12 +27,16 @@ contract BlockJack is RandomCardGenerator, CasinoGame, ArrayHelpers{
         _;
     }
     
+    /// @notice Used to start a new game
+    /// @dev Create a new game and transfer the initial bet
     function startGame() external payable checkBetWithinRange returns (Game memory)  {
         uint id = createGame();
         
         return games[id];
     }
     
+    /// @notice Used for pulling another card 
+    /// @dev Generates a new random card to give to the user
     function hit() external returns (Game memory) { 
         Game storage currentGame = games[ownerToGame[msg.sender]];
         require(computeHandSum(currentGame.playerHand) < 21);
@@ -43,6 +47,7 @@ contract BlockJack is RandomCardGenerator, CasinoGame, ArrayHelpers{
         return currentGame;
     }
     
+    /// @notice Used for stand action
     function stand() external returns (Game memory) {
         Game storage currentGame = games[ownerToGame[msg.sender]];
         uint8 playerHandSum = computeHandSum(currentGame.playerHand);
